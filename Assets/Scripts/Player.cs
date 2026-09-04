@@ -19,23 +19,28 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Vector3 velocity = myRigidbody.velocity;
-        if(Input.GetKey(KeyCode.RightArrow))
+        
+
+    
+        myRigidbody.velocity = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             myRigidbody.velocity = new Vector3(speed, 0f, 0f);
         }
-        if(Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             myRigidbody.velocity = new Vector3(-speed, 0f, 0f);
         }
-        if(Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             myRigidbody.velocity = new Vector3(0f, 0f, speed);
         }
-        if(Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             myRigidbody.velocity = new Vector3(0f, 0f, -speed);
         }
+
     }
     void OnCollisionEnter(Collision collision)
     {
